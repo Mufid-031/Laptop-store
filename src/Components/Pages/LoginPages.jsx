@@ -1,6 +1,15 @@
+import { useEffect } from "react"
 import FormInput from "../Fragment/Input"
 
-const Login = () => {
+const Login = (Props) => {
+    const { account } = Props
+
+    useEffect(() => {
+        if (account) {
+            window.location.href = "/app"
+        }
+    }, [account])
+
     return (
         <div className="w-[500px] bg-slate-700 drop-shadow-xl rounded-lg mx-auto mt-28 px-10">
             <FormInput.Title text="Login" />
